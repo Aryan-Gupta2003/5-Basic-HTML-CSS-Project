@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightblue;
+}
+.container{
+    width: 280px;
+    height: 329px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: 1s all ease;
+}
+.container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/profile.JPG");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 1;
+    transition: all 0.5s ease-in;
+}
+.container:hover::before{
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.wrapper::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #de2cd1 0%, #47cbd7 100%);
+    transform: skew(30deg) translateX(-125%);
+    opacity: 0.9;
+    transition: all 0.6s ease;
+}
+.wrapper::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #de2cd1 0%, #47cbd7 100%);
+    transform: skew(30deg) translateX(125%);
+    opacity: 0.9;
+    transition: all 0.6s ease;
+}
+
+.container:hover .wrapper::after{
+    transform: skew(30deg), translateX(125%);
+    background: linear-gradient(to right, #47cbd7 0%, #de2cd1 100%);
+}
+.container:hover .wrapper::before{
+    transform: skew(30deg), translateX(-125%);
+    background: linear-gradient(to right, #47cbd7 0%, #de2cd1 100%);
+}
+.profile{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 16px 10px;
+    position: relative;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition-delay: 0.2s;
+}
+.container:hover .profile{
+    opacity: 1;
+    transition: all 0.6s ease;
+    transition-delay: 0.2s;
+}
+
+.profile img{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    margin: 8px 0;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#fff,#fff), linear-gradient(to right, #de3cd7, #47cbd1);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    position: relative;
+}
+.profile h2{
+    line-height: 1.2;
+    font-weight: 600;
+    color: #3f3f3f;
+}
+.profile span{
+    font-size: 16px;
+    font-weight: 600;
+    color: #676767;
+}
+.profile .icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #222;
+    justify-content: space-evenly;
+    font-size: 20px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+.profile .icons a ion-icon{
+    background: linear-gradient(to right, #de2cd7 0%, #47cbd1 100%);
+    color: #fff;
+    /* background-image: url("images/profile.JPG"); */
+    border-radius: 50%;
+    padding: 8px;
+    transition: 0.3s;
+}
+.profile .icons a ion-icon:hover{
+    transform: scale(1.1) translateY(-2px);
+}
+.profile button a{
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    padding: 8px 20px;
+    background: linear-gradient(to right, #de2cd7 0%, #47cbd1 100%);
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+.profile button a:hover{
+    transform: translateY(-4px);
+}
+.profile button a:active{
+    transform: translateY(0);
+}
