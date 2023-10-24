@@ -91,6 +91,7 @@ body{
     padding: 16px 10px;
     position: relative;
     opacity: 0;
+    background-color: white;
     transition: all 0.3s ease;
     transition-delay: 0.2s;
 }
